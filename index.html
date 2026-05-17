@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanting Yang</title>
+  <meta name="description" content="Pharmacoepidemiologist building real-world evidence for safer medication use in complex environmental and social contexts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+  <header class="header">
+    <div class="header-hero">
+      <svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" class="hero-visual" preserveAspectRatio="xMidYMid slice" aria-label="Environmental health landscape">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#8aafc4"/>
+            <stop offset="40%" stop-color="#a8c4d4"/>
+            <stop offset="70%" stop-color="#c8d8e2"/>
+            <stop offset="100%" stop-color="#dce6ec"/>
+          </linearGradient>
+          <linearGradient id="hill-far" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#7a9a88"/>
+            <stop offset="100%" stop-color="#6a8a78"/>
+          </linearGradient>
+          <linearGradient id="hill-mid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#5a7a68"/>
+            <stop offset="100%" stop-color="#4a6a58"/>
+          </linearGradient>
+          <linearGradient id="hill-near" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3d5c48"/>
+            <stop offset="100%" stop-color="#2d4c38"/>
+          </linearGradient>
+          <radialGradient id="sun-glow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#f0e8c8" stop-opacity="0.9"/>
+            <stop offset="40%" stop-color="#e8d8b0" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#e8d8b0" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#8ab0c8" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#6a98b4" stop-opacity="0.3"/>
+          </linearGradient>
+        </defs>
+        <!-- Sky -->
+        <rect width="1600" height="900" fill="url(#sky)"/>
+        <!-- Sun + glow -->
+        <circle cx="1200" cy="200" r="180" fill="url(#sun-glow)"/>
+        <circle cx="1200" cy="200" r="50" fill="#f0e8c8" opacity="0.8"/>
+        <circle cx="1200" cy="200" r="65" fill="none" stroke="#e8d8b0" stroke-width="1" opacity="0.3"/>
+        <!-- Clouds -->
+        <ellipse cx="300" cy="180" rx="120" ry="30" fill="#ffffff" opacity="0.25"/>
+        <ellipse cx="360" cy="170" rx="80" ry="25" fill="#ffffff" opacity="0.2"/>
+        <ellipse cx="800" cy="140" rx="100" ry="22" fill="#ffffff" opacity="0.2"/>
+        <ellipse cx="850" cy="132" rx="60" ry="18" fill="#ffffff" opacity="0.15"/>
+        <ellipse cx="1400" cy="160" rx="90" ry="20" fill="#ffffff" opacity="0.18"/>
+        <!-- Distant mountains -->
+        <path d="M0 520 Q80 380 200 420 Q350 340 500 400 Q600 360 700 390 Q850 320 1000 380 Q1100 340 1200 370 Q1350 310 1450 360 Q1550 390 1600 380 L1600 900 L0 900Z" fill="url(#hill-far)" opacity="0.5"/>
+        <!-- Mid hills -->
+        <path d="M0 600 Q100 500 250 540 Q400 480 550 530 Q700 490 850 520 Q1000 470 1150 510 Q1300 480 1400 500 Q1500 530 1600 510 L1600 900 L0 900Z" fill="url(#hill-mid)" opacity="0.6"/>
+        <!-- Lake/water -->
+        <ellipse cx="900" cy="680" rx="250" ry="40" fill="url(#water)"/>
+        <path d="M700 678 Q750 672 800 678 Q850 684 900 678 Q950 672 1000 678 Q1050 684 1100 678" fill="none" stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
+        <!-- Near hills -->
+        <path d="M0 700 Q150 620 300 660 Q500 600 700 650 Q900 620 1050 640 Q1200 610 1350 650 Q1500 630 1600 660 L1600 900 L0 900Z" fill="url(#hill-near)" opacity="0.7"/>
+        <!-- Trees foreground left -->
+        <line x1="100" y1="720" x2="100" y2="640" stroke="#2d4c38" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="100" cy="620" rx="30" ry="38" fill="#3d6050" opacity="0.8"/>
+        <ellipse cx="88" cy="632" rx="20" ry="26" fill="#4a7060" opacity="0.6"/>
+        <line x1="170" y1="700" x2="170" y2="630" stroke="#2d4c38" stroke-width="3.5" stroke-linecap="round"/>
+        <ellipse cx="170" cy="612" rx="26" ry="32" fill="#3d6050" opacity="0.75"/>
+        <line x1="60" y1="730" x2="60" y2="670" stroke="#2d4c38" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="60" cy="656" rx="22" ry="28" fill="#4a7060" opacity="0.7"/>
+        <!-- Trees foreground right -->
+        <line x1="1400" y1="700" x2="1400" y2="620" stroke="#2d4c38" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="1400" cy="600" rx="28" ry="36" fill="#3d6050" opacity="0.75"/>
+        <line x1="1480" y1="710" x2="1480" y2="645" stroke="#2d4c38" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="1480" cy="630" rx="22" ry="28" fill="#4a7060" opacity="0.7"/>
+        <line x1="1340" y1="720" x2="1340" y2="665" stroke="#2d4c38" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="1340" cy="650" rx="20" ry="26" fill="#3d6050" opacity="0.65"/>
+        <!-- Mid-ground trees -->
+        <ellipse cx="400" cy="590" rx="18" ry="24" fill="#5a7a68" opacity="0.5"/>
+        <ellipse cx="450" cy="580" rx="14" ry="18" fill="#4a6a58" opacity="0.4"/>
+        <ellipse cx="1100" cy="570" rx="16" ry="20" fill="#5a7a68" opacity="0.45"/>
+        <ellipse cx="1150" cy="575" rx="12" ry="16" fill="#4a6a58" opacity="0.35"/>
+        <!-- Birds -->
+        <path d="M400 250 Q408 238 416 250" fill="none" stroke="#5a7080" stroke-width="1.5" opacity="0.4"/>
+        <path d="M440 240 Q446 230 452 240" fill="none" stroke="#5a7080" stroke-width="1.2" opacity="0.35"/>
+        <path d="M420 260 Q425 252 430 260" fill="none" stroke="#5a7080" stroke-width="1" opacity="0.3"/>
+        <path d="M900 200 Q906 192 912 200" fill="none" stroke="#5a7080" stroke-width="1.2" opacity="0.25"/>
+        <path d="M930 210 Q935 204 940 210" fill="none" stroke="#5a7080" stroke-width="1" opacity="0.2"/>
+        <!-- Air flow / wind -->
+        <path d="M50 350 Q200 330 350 350 Q450 360 550 340" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.12"/>
+        <path d="M600 300 Q750 285 900 300 Q1000 310 1100 295" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.1"/>
+        <!-- Sheep -->
+        <g class="sheep sheep-1" style="cursor:pointer" transform="translate(750,650) scale(2.2) translate(-750,-650)">
+          <rect x="715" y="620" width="65" height="60" fill="transparent" pointer-events="all"/>
+          <!-- body -->
+          <ellipse cx="750" cy="648" rx="22" ry="16" fill="#f0ece4" opacity="0.9"/>
+          <ellipse cx="748" cy="645" rx="18" ry="13" fill="#faf6f0"/>
+          <!-- wool bumps -->
+          <circle cx="738" cy="638" r="6" fill="#faf6f0"/>
+          <circle cx="750" cy="635" r="7" fill="#f5f0e8"/>
+          <circle cx="762" cy="638" r="6" fill="#faf6f0"/>
+          <!-- head -->
+          <ellipse cx="730" cy="643" rx="7" ry="6" fill="#3a3a3a"/>
+          <!-- ears -->
+          <ellipse cx="726" cy="638" rx="3" ry="2" fill="#4a4a4a" transform="rotate(-20 726 638)"/>
+          <ellipse cx="734" cy="637" rx="3" ry="2" fill="#4a4a4a" transform="rotate(15 734 637)"/>
+          <!-- eye -->
+          <circle cx="728" cy="642" r="1.2" fill="#ffffff"/>
+          <!-- legs -->
+          <line x1="740" y1="660" x2="740" y2="672" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="748" y1="660" x2="748" y2="672" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="756" y1="660" x2="756" y2="672" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="762" y1="660" x2="762" y2="672" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <g class="sheep sheep-2" style="cursor:pointer" transform="translate(820,655) scale(2) translate(-820,-655)">
+          <rect x="793" y="628" width="60" height="55" fill="transparent" pointer-events="all"/>
+          <ellipse cx="820" cy="655" rx="20" ry="14" fill="#f0ece4" opacity="0.9"/>
+          <ellipse cx="818" cy="652" rx="16" ry="11" fill="#faf6f0"/>
+          <circle cx="808" cy="646" r="5.5" fill="#faf6f0"/>
+          <circle cx="818" cy="643" r="6" fill="#f5f0e8"/>
+          <circle cx="828" cy="646" r="5.5" fill="#faf6f0"/>
+          <ellipse cx="836" cy="651" rx="6" ry="5.5" fill="#3a3a3a"/>
+          <ellipse cx="840" cy="646" rx="3" ry="2" fill="#4a4a4a" transform="rotate(20 840 646)"/>
+          <ellipse cx="833" cy="645" rx="3" ry="2" fill="#4a4a4a" transform="rotate(-15 833 645)"/>
+          <circle cx="838" cy="650" r="1.2" fill="#ffffff"/>
+          <line x1="808" y1="666" x2="808" y2="677" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="815" y1="666" x2="815" y2="677" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="822" y1="666" x2="822" y2="677" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="828" y1="666" x2="828" y2="677" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <g class="sheep sheep-3" style="cursor:pointer" transform="translate(680,668) scale(1.8) translate(-680,-668)">
+          <rect x="655" y="643" width="55" height="50" fill="transparent" pointer-events="all"/>
+          <ellipse cx="680" cy="668" rx="18" ry="13" fill="#f0ece4" opacity="0.85"/>
+          <ellipse cx="678" cy="665" rx="14" ry="10" fill="#ede8e0"/>
+          <circle cx="670" cy="659" r="5" fill="#ede8e0"/>
+          <circle cx="678" cy="657" r="5.5" fill="#e8e2da"/>
+          <circle cx="686" cy="659" r="5" fill="#ede8e0"/>
+          <ellipse cx="694" cy="664" rx="5.5" ry="5" fill="#3a3a3a"/>
+          <ellipse cx="698" cy="660" rx="2.5" ry="1.8" fill="#4a4a4a" transform="rotate(20 698 660)"/>
+          <ellipse cx="691" cy="659" rx="2.5" ry="1.8" fill="#4a4a4a" transform="rotate(-15 691 659)"/>
+          <circle cx="696" cy="663" r="1" fill="#ffffff"/>
+          <line x1="670" y1="678" x2="670" y2="688" stroke="#3a3a3a" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="676" y1="678" x2="676" y2="688" stroke="#3a3a3a" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="682" y1="678" x2="682" y2="688" stroke="#3a3a3a" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="687" y1="678" x2="687" y2="688" stroke="#3a3a3a" stroke-width="1.8" stroke-linecap="round"/>
+        </g>
+        <!-- Foreground grass -->
+        <path d="M0 780 Q200 760 400 775 Q600 785 800 770 Q1000 760 1200 775 Q1400 785 1600 770 L1600 900 L0 900Z" fill="#2d4c38" opacity="0.4"/>
+        <!-- Light rays from sun -->
+        <line x1="1200" y1="200" x2="600" y2="700" stroke="#f0e8c8" stroke-width="1" opacity="0.06"/>
+        <line x1="1200" y1="200" x2="800" y2="750" stroke="#f0e8c8" stroke-width="1" opacity="0.05"/>
+        <line x1="1200" y1="200" x2="1000" y2="780" stroke="#f0e8c8" stroke-width="1" opacity="0.06"/>
+        <line x1="1200" y1="200" x2="1400" y2="750" stroke="#f0e8c8" stroke-width="1" opacity="0.04"/>
+      </svg>
+      <div class="hero-overlay">
+        <h1 class="hero-name">Hello, I'm Lanting.</h1>
+        <p class="hero-tagline">Pharmacoepidemiology &middot; Environmental Health &middot; Real-World Evidence</p>
+      </div>
+      <button class="mode-toggle" id="modeToggle" aria-label="Toggle dark mode">
+        <svg id="sunIcon" class="mode-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="5" fill="currentColor"/>
+          <line x1="12" y1="1" x2="12" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="12" y1="20" x2="12" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="1" y1="12" x2="4" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="20" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg id="moonIcon" class="mode-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+        </svg>
+      </button>
+      <button class="sound-toggle playing" id="soundToggle" aria-label="Toggle ambient sound">
+        <svg id="soundIconOn" class="sound-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+          <path d="M15.54 8.46a5 5 0 010 7.07" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18.07 5.93a9 9 0 010 12.73" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg id="soundIconOff" class="sound-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+          <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+          <line x1="16" y1="9" x2="22" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="22" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="header-nav-bar">
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About Me</a>
+        <a href="#research">My Research</a>
+        <a href="#posts">Posts</a>
+        <a href="#grants">Grants &amp; Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#coffee">Coffee, Cat &amp; Notes</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="about" class="section">
+    <h2><span class="heading-counter">A.</span> About Me</h2>
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>Lanting Yang, PhD, MPH</h3>
+        <p>Postdoctoral Scholar, Division of Clinical Pharmacy, <a href="https://pharmacy.ucsd.edu/" target="_blank" rel="noopener" class="inst-link">Skaggs School of Pharmacy and Pharmaceutical Sciences</a>, University of California San Diego</p>
+        <p>Incoming Assistant Professor, <a href="https://pharmacy.ufl.edu/pharmaceutical-outcomes-policy/" target="_blank" rel="noopener" class="inst-link">Department of Pharmaceutical Outcomes and Policy</a>, College of Pharmacy, University of Florida</p>
+        <span class="training-link" onclick="this.parentElement.querySelector('.training-body').classList.toggle('show'); this.classList.toggle('open')">Education &amp; Training <span class="training-arrow">&#9662;</span></span>
+        <div class="training-body">
+          <div class="training-item">
+            <div class="training-year">2019 &ndash; 2024</div>
+            <div class="training-detail"><strong>PhD in Pharmaceutical Outcomes and Policy Research</strong>, School of Pharmacy, University of Pittsburgh</div>
+          </div>
+          <div class="training-item">
+            <div class="training-year">2017 &ndash; 2019</div>
+            <div class="training-detail"><strong>MPH in Epidemiology</strong>, Graduate School of Public Health, University of Pittsburgh</div>
+          </div>
+          <div class="training-item">
+            <div class="training-year">2012 &ndash; 2017</div>
+            <div class="training-detail"><strong>BS in Clinical Pharmacy</strong>, Harbin Medical University, China</div>
+          </div>
+        </div>
+      </div>
+      <div class="content-card">
+        <p><em>Building real-world evidence to support safer medication use in complex environmental and social contexts.</em></p>
+        <p>I am a pharmacoepidemiologist whose research examines how medications, <strong>environmental stressors</strong>, and <strong>social vulnerability</strong> jointly shape health outcomes among older adults and patients with <strong>cardiometabolic diseases</strong>. My work integrates <strong>real-world data</strong>, environmental exposure measures, <strong>causal inference</strong>, and <strong>data science</strong> methods to generate evidence that can inform safer, more equitable <strong>medication use</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="section">
+    <div class="section-inner">
+      <h2><span class="heading-counter">B.</span> My Research</h2>
+      <div class="research-grid">
+        <div class="research-item">
+          <div class="research-counter">I.</div>
+          <div class="research-content">
+            <h3>Environmental Pharmacoepidemiology</h3>
+            <p>I study how environmental stressors, including <strong>extreme heat</strong>, <strong>wildfire smoke</strong>, and <strong>air pollution</strong>, affect clinical outcomes among patients with chronic cardiometabolic conditions. A major focus of my work is understanding whether medications or <strong>medication burden</strong> may modify patients' vulnerability to environmental-related risks.</p>
+            <span class="pub-toggle" onclick="document.getElementById('pubs-env').classList.toggle('show')">Related Publications <span class="pub-arrow">&#9662;</span></span>
+            <div class="pub-panel" id="pubs-env">
+              <div class="pub-item">
+                <span class="pub-abbr">Paper Title Placeholder</span>
+                <a href="#" class="pub-doi">DOI &rarr;</a>
+              </div>
+              <div class="pub-item">
+                <span class="pub-abbr">Paper Title Placeholder</span>
+                <a href="#" class="pub-doi">DOI &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="research-item">
+          <div class="research-counter">II.</div>
+          <div class="research-content">
+            <h3>Real-World Medication Safety and Effectiveness</h3>
+            <p>I use large-scale <strong>real-world data</strong> to evaluate the safety and effectiveness of medications used in <strong>diabetes</strong>, <strong>cardiovascular disease</strong>, <strong>kidney disease</strong>, and aging populations. My work includes <strong>comparative effectiveness studies</strong>, treatment trajectory analyses, and <strong>medication safety</strong> evaluations using claims-based and linked datasets. This line of work includes studies on <strong>SGLT2 inhibitors</strong>, <strong>DPP-4 inhibitors</strong>, <strong>GLP-1 receptor agonists</strong>, <strong>oral anticoagulants</strong>, exposure to nephrotoxic medications, treatment adherence, and cardiovascular and renal outcomes.</p>
+            <span class="pub-toggle" onclick="document.getElementById('pubs-rwe').classList.toggle('show')">Related Publications <span class="pub-arrow">&#9662;</span></span>
+            <div class="pub-panel" id="pubs-rwe">
+              <div class="pub-item">
+                <span class="pub-abbr">Paper Title Placeholder</span>
+                <a href="#" class="pub-doi">DOI &rarr;</a>
+              </div>
+              <div class="pub-item">
+                <span class="pub-abbr">Paper Title Placeholder</span>
+                <a href="#" class="pub-doi">DOI &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="research-item">
+          <div class="research-counter">III.</div>
+          <div class="research-content">
+            <h3>Methods and Data Science</h3>
+            <p>My research applies and develops methods including <strong>target trial emulation</strong>, <strong>case-crossover designs</strong>, <strong>time-varying survival models</strong>, <strong>causal inference</strong>, <strong>machine learning</strong>, <strong>trajectory modeling</strong>, and <strong>claims-based phenotyping</strong>. I am also interested in using <strong>interpretable machine learning</strong> and <strong>natural language processing</strong> to improve risk prediction and evidence generation.</p>
+            <span class="pub-toggle" onclick="document.getElementById('pubs-methods').classList.toggle('show')">Related Publications <span class="pub-arrow">&#9662;</span></span>
+            <div class="pub-panel" id="pubs-methods">
+              <div class="pub-item">
+                <span class="pub-abbr">Paper Title Placeholder</span>
+                <a href="#" class="pub-doi">DOI &rarr;</a>
+              </div>
+              <div class="pub-item">
+                <span class="pub-abbr">Paper Title Placeholder</span>
+                <a href="#" class="pub-doi">DOI &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="posts" class="section">
+    <h2><span class="heading-counter">C.</span> Posts</h2>
+    <p class="posts-intro">Professional updates, milestones, and reflections from my academic journey.</p>
+    <div class="posts-grid">
+
+      <div class="post-card-v2" onclick="this.classList.toggle('expanded')">
+        <div class="post-card-preview">
+          <div class="post-card-logo">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-label="ADA logo">
+              <circle cx="40" cy="40" r="38" fill="#005da6" opacity="0.9"/>
+              <text x="40" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">ADA</text>
+              <text x="40" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="6" font-weight="500" fill="rgba(255,255,255,0.8)">American</text>
+              <text x="40" y="56" text-anchor="middle" font-family="Inter, sans-serif" font-size="6" font-weight="500" fill="rgba(255,255,255,0.8)">Diabetes</text>
+              <text x="40" y="64" text-anchor="middle" font-family="Inter, sans-serif" font-size="6" font-weight="500" fill="rgba(255,255,255,0.8)">Association</text>
+            </svg>
+          </div>
+          <div class="post-card-info">
+            <h3>Honored to Receive the ADA Postdoctoral Fellowship</h3>
+            <div class="post-card-date">2026</div>
+          </div>
+          <span class="post-card-arrow">&#9662;</span>
+        </div>
+        <div class="post-card-detail">
+          <p>I am grateful to share that I have received a Postdoctoral Fellowship from the <strong>American Diabetes Association</strong> for my project, "Polypharmacy, Environmental Exposures, and Social Disadvantage in Type 2 Diabetes."</p>
+          <p>This project uses <strong>Medicare claims data</strong> linked with environmental exposure and social determinant measures to examine how <strong>medication burden</strong>, <strong>extreme heat</strong>, <strong>air pollution</strong>, and <strong>neighborhood-level disadvantage</strong> jointly influence clinical outcomes among individuals with <strong>type 2 diabetes</strong>.</p>
+          <p>This fellowship supports my broader research goal of developing an independent program in <strong>environmental pharmacoepidemiology</strong>, focused on generating real-world evidence for safer, more equitable, and climate-resilient medication use.</p>
+          <p>I am deeply grateful to my mentors, collaborators, and colleagues for their support, and to the American Diabetes Association for its support of this work.</p>
+        </div>
+      </div>
+
+      <div class="post-card-v2" onclick="this.classList.toggle('expanded')">
+        <div class="post-card-preview">
+          <div class="post-card-logo">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-label="UF logo">
+              <circle cx="40" cy="40" r="38" fill="#fa4616" opacity="0.9"/>
+              <text x="40" y="44" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#ffffff">UF</text>
+              <text x="40" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="6" font-weight="500" fill="rgba(255,255,255,0.8)">University of</text>
+              <text x="40" y="66" text-anchor="middle" font-family="Inter, sans-serif" font-size="6" font-weight="500" fill="rgba(255,255,255,0.8)">Florida</text>
+            </svg>
+          </div>
+          <div class="post-card-info">
+            <h3>Joining the University of Florida as Assistant Professor</h3>
+            <div class="post-card-date">Coming soon</div>
+          </div>
+          <span class="post-card-arrow">&#9662;</span>
+        </div>
+        <div class="post-card-detail">
+          <p><em>Details coming soon &mdash; stay tuned for updates on this exciting new chapter.</em></p>
+        </div>
+      </div>
+
+      <div class="post-card-v2" onclick="this.classList.toggle('expanded')">
+        <div class="post-card-preview">
+          <div class="post-card-logo placeholder-logo">
+            <span>+</span>
+          </div>
+          <div class="post-card-info">
+            <h3>More Updates Coming</h3>
+            <div class="post-card-date">Stay tuned</div>
+          </div>
+          <span class="post-card-arrow">&#9662;</span>
+        </div>
+        <div class="post-card-detail">
+          <p><em>New posts will appear here as milestones unfold.</em></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="grants" class="section">
+    <div class="section-inner">
+      <h2><span class="heading-counter">D.</span> Grants &amp; Projects</h2>
+
+      <div class="grant-label">Active Funding</div>
+      <div class="grant-card">
+        <h3>Polypharmacy, Environmental Exposures, and Social Disadvantage in Type 2 Diabetes</h3>
+        <div class="grant-meta">
+          American Diabetes Association Postdoctoral Fellowship<br>
+          Role: Principal Investigator &middot; 2026&ndash;2028
+        </div>
+        <p>This project examines how <strong>medication burden</strong>, <strong>environmental exposures</strong>, and <strong>neighborhood-level disadvantage</strong> jointly influence clinical outcomes among older adults with <strong>type 2 diabetes</strong>. The study uses <strong>Medicare claims</strong> linked with environmental and social determinant data to identify populations who may face elevated medication-related risks under environmental and social stressors.</p>
+      </div>
+
+      <div class="grant-label">Past Funding</div>
+      <div class="grant-card">
+        <h3>Effect of Extreme Heat and Wildfire Smoke on Health Outcomes and Costs in Vulnerable Populations with Cardiovascular Disease in the Western U.S.</h3>
+        <div class="grant-meta">
+          Skaggs Family Foundation<br>
+          Role: Multiple Principal Investigator &middot; 2023&ndash;2025
+        </div>
+        <p>This project evaluated the health and economic impacts of <strong>extreme heat</strong> and <strong>wildfire smoke</strong> exposure among vulnerable populations with <strong>cardiovascular disease</strong> in the western United States. This work helped shape my broader research direction in <strong>environmental pharmacoepidemiology</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2><span class="heading-counter">E.</span> Contact</h2>
+    <p>I am always open to conversations about research, collaboration, mentorship, or simply exchanging ideas. Feel free to reach out anytime.</p>
+    <div class="contact-block">
+      <p><a href="mailto:layang@health.ucsd.edu">layang@health.ucsd.edu</a></p>
+      <div class="contact-links">
+        <a href="https://scholar.google.com/citations?user=HPTHeRQAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/lanting-yang/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="coffee" class="section coffee-section">
+    <div class="coffee-header">
+      <h2 class="dots">&bull;&bull;&bull;</h2>
+      <h2>Coffee, Cat &amp; Notes</h2>
+      <p class="coffee-intro">Beyond the research &mdash; a little corner for the things that keep me going: my cat Joey, a good cup of coffee, and the occasional thought worth writing down.</p>
+    </div>
+
+    <div class="coffee-feature">
+      <h3 class="coffee-label">Meet Joey</h3>
+      <div class="joey-gallery">
+        <div class="joey-photo placeholder-photo">
+          <span>Joey napping</span>
+        </div>
+        <div class="joey-photo placeholder-photo">
+          <span>Joey supervising research</span>
+        </div>
+        <div class="joey-photo placeholder-photo">
+          <span>Joey being Joey</span>
+        </div>
+      </div>
+      <p class="joey-caption">My unofficial research assistant. Specializes in napping on manuscripts and walking across keyboards at critical moments.</p>
+    </div>
+
+    <h3 class="coffee-label">Recent Notes</h3>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card-img placeholder-photo"><span>Photo</span></div>
+        <div class="blog-card-body">
+          <div class="blog-date">Coming soon</div>
+          <h4>Morning Rituals &amp; Writing Routines</h4>
+          <p>On the small habits that make a big difference in academic life...</p>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img placeholder-photo"><span>Photo</span></div>
+        <div class="blog-card-body">
+          <div class="blog-date">Coming soon</div>
+          <h4>Life with Joey: Lessons from a Cat</h4>
+          <p>What my cat has taught me about patience, rest, and knowing when to pounce...</p>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img placeholder-photo"><span>Photo</span></div>
+        <div class="blog-card-body">
+          <div class="blog-date">Coming soon</div>
+          <h4>Favorite Coffee Spots</h4>
+          <p>A running list of the best places to think, write, and caffeinate...</p>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img placeholder-photo"><span>Photo</span></div>
+        <div class="blog-card-body">
+          <div class="blog-date">Coming soon</div>
+          <h4>Moving to Gainesville</h4>
+          <p>Reflections on starting a new chapter at the University of Florida...</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <footer>
+    <p class="footer-quote" id="footerQuote"></p>
+    <p class="footer-author" id="footerAuthor"></p>
+  </footer>
+
+  <script>
+    // Random footer quote
+    const quotes = [
+      { text: "I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.", author: "Henry David Thoreau", source: "Walden; or, Life in the Woods" },
+      { text: "In every walk with nature, one receives far more than he seeks.", author: "John Muir", source: "" },
+      { text: "The earth has music for those who listen.", author: "William Shakespeare", source: "" },
+      { text: "Look deep into nature, and then you will understand everything better.", author: "Albert Einstein", source: "" },
+      { text: "The clearest way into the Universe is through a forest wilderness.", author: "John Muir", source: "" },
+      { text: "We do not inherit the earth from our ancestors; we borrow it from our children.", author: "Native American Proverb", source: "" },
+      { text: "The goal of life is living in agreement with nature.", author: "Zeno of Citium", source: "" },
+      { text: "To forget how to dig the earth and to tend the soil is to forget ourselves.", author: "Mahatma Gandhi", source: "" },
+      { text: "Nature does not hurry, yet everything is accomplished.", author: "Lao Tzu", source: "" },
+      { text: "The poetry of the earth is never dead.", author: "John Keats", source: "" },
+      { text: "What is the use of a house if you haven't got a tolerable planet to put it on?", author: "Henry David Thoreau", source: "" },
+      { text: "We won't have a society if we destroy the environment.", author: "Margaret Mead", source: "" },
+      { text: "The environment is where we all meet; where we all have a mutual interest; it is the one thing all of us share.", author: "Lady Bird Johnson", source: "" },
+      { text: "He that plants trees loves others besides himself.", author: "Thomas Fuller", source: "" },
+      { text: "The earth laughs in flowers.", author: "Ralph Waldo Emerson", source: "" },
+      { text: "Between every two pines is a doorway to a new world.", author: "John Muir", source: "" },
+      { text: "Those who contemplate the beauty of the earth find reserves of strength that will endure as long as life lasts.", author: "Rachel Carson", source: "Silent Spring" },
+      { text: "Man's heart, away from nature, becomes hard.", author: "Standing Bear", source: "" },
+      { text: "The good man is the friend of all living things.", author: "Mahatma Gandhi", source: "" },
+      { text: "One touch of nature makes the whole world kin.", author: "William Shakespeare", source: "Troilus and Cressida" },
+      { text: "To see a world in a grain of sand and a heaven in a wildflower, hold infinity in the palm of your hand and eternity in an hour.", author: "William Blake", source: "Auguries of Innocence" },
+      { text: "Adopt the pace of nature: her secret is patience.", author: "Ralph Waldo Emerson", source: "" },
+      { text: "The creation of a thousand forests is in one acorn.", author: "Ralph Waldo Emerson", source: "" },
+      { text: "If you truly love nature, you will find beauty everywhere.", author: "Vincent van Gogh", source: "" },
+      { text: "I felt my lungs inflate with the onrush of scenery — air, mountains, trees, people. I thought, this is what it is to be happy.", author: "Sylvia Plath", source: "The Bell Jar" },
+      { text: "Not just beautiful, though — the stars are like the trees in the forest, alive and breathing. And they're watching me.", author: "Haruki Murakami", source: "Kafka on the Shore" },
+      { text: "The least movement is of importance to all nature. The entire ocean is affected by a pebble.", author: "Blaise Pascal", source: "" },
+      { text: "Keep close to Nature's heart... and break clear away, once in a while, and climb a mountain or spend a week in the woods. Wash your spirit clean.", author: "John Muir", source: "" },
+      { text: "There is a pleasure in the pathless woods, there is a rapture on the lonely shore, there is society where none intrudes, by the deep sea, and music in its roar.", author: "Lord Byron", source: "" },
+      { text: "The best time to plant a tree was twenty years ago. The second best time is now.", author: "Chinese Proverb", source: "" }
+    ];
+    const q = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById('footerQuote').textContent = '“' + q.text + '”';
+    document.getElementById('footerAuthor').innerHTML = '&mdash; ' + q.author + (q.source ? ', <em>' + q.source + '</em>' : '');
+
+    // Dark mode toggle
+    const modeToggle = document.getElementById('modeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'true') {
+      document.body.classList.add('dark-mode');
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = '';
+    }
+
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+      if (isDark) {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = '';
+      } else {
+        sunIcon.style.display = '';
+        moonIcon.style.display = 'none';
+      }
+    });
+
+    // Page loading animation
+    window.addEventListener('load', () => {
+      document.body.classList.remove('loading');
+    });
+
+    // Scroll-to-top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Mobile hamburger menu
+    const hamburger = document.getElementById('navHamburger');
+    const navLinksEl = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinksEl.classList.toggle('open');
+    });
+    navLinksEl.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinksEl.classList.remove('open');
+      });
+    });
+
+    // Section fade-in on scroll
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+
+    // Sticky nav bar
+    const nav = document.querySelector('.header-nav-bar');
+    const header = document.querySelector('.header-hero');
+    const navTop = nav.offsetTop;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= navTop) {
+        nav.classList.add('sticky');
+      } else {
+        nav.classList.remove('sticky');
+      }
+    });
+
+    // Active nav link highlighting on scroll
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const allSections = document.querySelectorAll('section[id], div[id]');
+
+    function updateActiveNav() {
+      let current = '';
+      allSections.forEach(section => {
+        const top = section.offsetTop - 100;
+        if (window.scrollY >= top) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav);
+
+    // Smooth scroll with nav click effect
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          // Click ripple effect
+          link.classList.add('nav-clicked');
+          setTimeout(() => link.classList.remove('nav-clicked'), 400);
+
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Sheep click interactions
+    const sheepMessages = [
+      "Baa! 🐑",
+      "Meeeh~",
+      "*munches grass*",
+      "Baa baa! 🌿",
+      "*wiggles tail*",
+      "Zzzz... 💤",
+      "*jumps!* 🐑",
+      "Hello there!",
+      "*happy bleat*",
+      "Pet me! 🐑",
+      "*nuzzles you*",
+      "More grass please~",
+    ];
+    let sheepClickCount = 0;
+
+    document.querySelectorAll('.sheep').forEach(sheep => {
+      sheep.style.cursor = 'pointer';
+
+      sheep.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sheepClickCount++;
+
+        // Jump animation
+        sheep.classList.add('sheep-jump');
+        setTimeout(() => sheep.classList.remove('sheep-jump'), 600);
+
+        // Speech bubble
+        const rect = sheep.getBoundingClientRect();
+        const heroRect = document.querySelector('.header-hero').getBoundingClientRect();
+        const bubble = document.createElement('div');
+        bubble.className = 'sheep-bubble';
+        bubble.textContent = sheepMessages[Math.floor(Math.random() * sheepMessages.length)];
+        bubble.style.left = (rect.left - heroRect.left + rect.width / 2) + 'px';
+        bubble.style.top = (rect.top - heroRect.top - 10) + 'px';
+        document.querySelector('.header-hero').appendChild(bubble);
+
+        setTimeout(() => bubble.remove(), 1800);
+
+        // "Baa" sound
+        if (audioCtx || window.AudioContext || window.webkitAudioContext) {
+          const ctx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(300 + Math.random() * 100, now);
+          osc.frequency.exponentialRampToValueAtTime(250, now + 0.15);
+          osc.frequency.exponentialRampToValueAtTime(350, now + 0.3);
+          gain.gain.setValueAtTime(0, now);
+          gain.gain.linearRampToValueAtTime(0.06, now + 0.05);
+          gain.gain.linearRampToValueAtTime(0.04, now + 0.2);
+          gain.gain.linearRampToValueAtTime(0, now + 0.4);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.4);
+        }
+
+        // Easter egg: after 10 clicks, sheep party
+        if (sheepClickCount === 10) {
+          document.querySelectorAll('.sheep').forEach(s => {
+            s.classList.add('sheep-party');
+            setTimeout(() => s.classList.remove('sheep-party'), 3000);
+          });
+          const partyBubble = document.createElement('div');
+          partyBubble.className = 'sheep-bubble party-bubble';
+          partyBubble.textContent = '🎉 Sheep party! 🐑🐑🐑';
+          partyBubble.style.left = '50%';
+          partyBubble.style.top = '40%';
+          document.querySelector('.header-hero').appendChild(partyBubble);
+          setTimeout(() => { partyBubble.remove(); sheepClickCount = 0; }, 3000);
+        }
+      });
+    });
+
+    // Ambient nature sound engine
+    const soundToggle = document.getElementById('soundToggle');
+    const soundIconOn = document.getElementById('soundIconOn');
+    const soundIconOff = document.getElementById('soundIconOff');
+    let audioCtx = null;
+    let soundPlaying = false;
+    let soundNodes = [];
+
+    function createOceanWaves(ctx) {
+      const bufferSize = ctx.sampleRate * 4;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * 0.3;
+      }
+
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      source.loop = true;
+
+      // Low-pass filter for ocean rumble
+      const lpFilter = ctx.createBiquadFilter();
+      lpFilter.type = 'lowpass';
+      lpFilter.frequency.value = 400;
+      lpFilter.Q.value = 0.5;
+
+      // LFO to modulate volume (wave rhythm)
+      const lfoGain = ctx.createGain();
+      lfoGain.gain.value = 0.08;
+
+      const lfo = ctx.createOscillator();
+      lfo.type = 'sine';
+      lfo.frequency.value = 0.12;
+      const lfoDepth = ctx.createGain();
+      lfoDepth.gain.value = 0.04;
+      lfo.connect(lfoDepth);
+      lfoDepth.connect(lfoGain.gain);
+      lfo.start();
+
+      source.connect(lpFilter);
+      lpFilter.connect(lfoGain);
+      lfoGain.connect(ctx.destination);
+      source.start();
+
+      return { source, lfo, nodes: [source, lpFilter, lfoGain, lfo, lfoDepth] };
+    }
+
+    function createBirdChirp(ctx) {
+      function chirp() {
+        if (!soundPlaying) return;
+
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        const baseFreq = 2000 + Math.random() * 2500;
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(baseFreq, now);
+        osc.frequency.exponentialRampToValueAtTime(baseFreq * (0.7 + Math.random() * 0.6), now + 0.08);
+        osc.frequency.exponentialRampToValueAtTime(baseFreq * 1.1, now + 0.15);
+
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(0.015 + Math.random() * 0.01, now + 0.02);
+        gain.gain.linearRampToValueAtTime(0.02, now + 0.06);
+        gain.gain.linearRampToValueAtTime(0, now + 0.15);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.2);
+
+        // Double chirp sometimes
+        if (Math.random() > 0.5) {
+          const osc2 = ctx.createOscillator();
+          const gain2 = ctx.createGain();
+          const t2 = now + 0.18;
+          osc2.type = 'sine';
+          osc2.frequency.setValueAtTime(baseFreq * 1.05, t2);
+          osc2.frequency.exponentialRampToValueAtTime(baseFreq * 0.85, t2 + 0.1);
+          gain2.gain.setValueAtTime(0, t2);
+          gain2.gain.linearRampToValueAtTime(0.012, t2 + 0.02);
+          gain2.gain.linearRampToValueAtTime(0, t2 + 0.12);
+          osc2.connect(gain2);
+          gain2.connect(ctx.destination);
+          osc2.start(t2);
+          osc2.stop(t2 + 0.15);
+        }
+
+        const nextDelay = 2000 + Math.random() * 6000;
+        setTimeout(chirp, nextDelay);
+      }
+
+      const startDelay = 1000 + Math.random() * 3000;
+      setTimeout(chirp, startDelay);
+    }
+
+    function startSound() {
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const ocean = createOceanWaves(audioCtx);
+      soundNodes = ocean.nodes;
+      soundPlaying = true;
+      createBirdChirp(audioCtx);
+      createBirdChirp(audioCtx);
+      soundToggle.classList.add('playing');
+      soundIconOn.style.display = '';
+      soundIconOff.style.display = 'none';
+    }
+
+    function stopSound() {
+      soundPlaying = false;
+      soundNodes.forEach(n => { try { n.stop(); } catch(e) { try { n.disconnect(); } catch(e2){} } });
+      soundNodes = [];
+      soundToggle.classList.remove('playing');
+      soundIconOn.style.display = 'none';
+      soundIconOff.style.display = '';
+    }
+
+    // Auto-play on first non-button user interaction
+    let autoStarted = false;
+    function autoStartSound(e) {
+      if (autoStarted) return;
+      if (soundToggle.contains(e.target)) return;
+      autoStarted = true;
+      startSound();
+      document.removeEventListener('click', autoStartSound);
+      document.removeEventListener('scroll', autoStartSound);
+    }
+    document.addEventListener('click', autoStartSound);
+    document.addEventListener('scroll', autoStartSound);
+
+    soundToggle.addEventListener('click', () => {
+      autoStarted = true;
+      document.removeEventListener('click', autoStartSound);
+      document.removeEventListener('scroll', autoStartSound);
+      if (soundPlaying) {
+        stopSound();
+      } else {
+        startSound();
+      }
+    });
+
+    // Hero SVG parallax on mouse move
+    const heroArea = document.querySelector('.header-hero');
+    const svg = document.querySelector('.hero-visual');
+    if (heroArea && svg) {
+      heroArea.addEventListener('mousemove', (e) => {
+        const rect = heroArea.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        // Parallax layers
+        const trees = svg.querySelectorAll('ellipse, line');
+        trees.forEach((el, i) => {
+          const depth = (i % 3 + 1) * 0.8;
+          el.style.transform = `translate(${x * depth}px, ${y * depth * 0.5}px)`;
+        });
+
+        // Sun follows cursor gently
+        const circles = svg.querySelectorAll('circle');
+        circles.forEach((el, i) => {
+          const depth = (i % 2 + 1) * 1.2;
+          el.style.transform = `translate(${x * depth}px, ${y * depth * 0.5}px)`;
+        });
+      });
+
+      heroArea.addEventListener('mouseleave', () => {
+        svg.querySelectorAll('ellipse, line, circle').forEach(el => {
+          el.style.transform = 'translate(0, 0)';
+          el.style.transition = 'transform 0.5s ease';
+        });
+      });
+
+      heroArea.addEventListener('mouseenter', () => {
+        svg.querySelectorAll('ellipse, line, circle').forEach(el => {
+          el.style.transition = 'transform 0.1s ease';
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
