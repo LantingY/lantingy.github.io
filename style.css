@@ -1560,6 +1560,10 @@ footer {
 .sheep {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  /* Animate translate (not transform) so the positioning
+     transform="...scale()..." attribute on each sheep is preserved.
+     No transform-origin here: it would also re-pivot that scale and
+     move the sheep off the hillside. */
 }
 
 .sheep-1 {
@@ -1575,24 +1579,24 @@ footer {
 }
 
 @keyframes sheepWalk1 {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(30px); }
-  50% { transform: translateX(15px) translateY(-3px); }
-  75% { transform: translateX(-10px); }
+  0%, 100% { translate: 0 0; }
+  25% { translate: 30px 0; }
+  50% { translate: 15px -3px; }
+  75% { translate: -10px 0; }
 }
 
 @keyframes sheepWalk2 {
-  0%, 100% { transform: translateX(0); }
-  30% { transform: translateX(-25px) translateY(2px); }
-  60% { transform: translateX(-40px); }
-  80% { transform: translateX(-15px) translateY(-2px); }
+  0%, 100% { translate: 0 0; }
+  30% { translate: -25px 2px; }
+  60% { translate: -40px 0; }
+  80% { translate: -15px -2px; }
 }
 
 @keyframes sheepWalk3 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  20% { transform: translateX(15px) translateY(-2px); }
-  50% { transform: translateX(35px); }
-  70% { transform: translateX(20px) translateY(2px); }
+  0%, 100% { translate: 0 0; }
+  20% { translate: 15px -2px; }
+  50% { translate: 35px 0; }
+  70% { translate: 20px 2px; }
 }
 
 /* Sheep click effects */
@@ -1601,12 +1605,12 @@ footer {
 }
 
 @keyframes sheepBounce {
-  0% { transform: translateY(0); }
-  20% { transform: translateY(-25px) rotate(-5deg); }
-  40% { transform: translateY(-35px) rotate(3deg); }
-  60% { transform: translateY(-15px) rotate(-2deg); }
-  80% { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
+  0% { translate: 0 0; }
+  20% { translate: -3px -25px; }
+  40% { translate: 2px -35px; }
+  60% { translate: -2px -15px; }
+  80% { translate: 0 -5px; }
+  100% { translate: 0 0; }
 }
 
 .sheep-party {
@@ -1614,10 +1618,10 @@ footer {
 }
 
 @keyframes sheepDance {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-15px) rotate(8deg); }
-  50% { transform: translateY(0) rotate(0deg); }
-  75% { transform: translateY(-15px) rotate(-8deg); }
+  0%, 100% { translate: 0 0; }
+  25% { translate: 7px -15px; }
+  50% { translate: 0 0; }
+  75% { translate: -7px -15px; }
 }
 
 .sheep-bubble {

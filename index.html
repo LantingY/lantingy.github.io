@@ -1035,20 +1035,21 @@
     const heroArea = document.querySelector('.header-hero');
     const svg = document.querySelector('.hero-visual');
     if (heroArea && svg && !prefersReducedMotion) {
+      // Parallax should not touch the sheep (they have their own animation/hit area).
+      const notSheep = (el) => !el.closest('.sheep');
+      const trees = Array.from(svg.querySelectorAll('ellipse, line')).filter(notSheep);
+      const circles = Array.from(svg.querySelectorAll('circle')).filter(notSheep);
+      const parallaxEls = [...trees, ...circles];
+
       heroArea.addEventListener('mousemove', (e) => {
         const rect = heroArea.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-        // Parallax layers
-        const trees = svg.querySelectorAll('ellipse, line');
         trees.forEach((el, i) => {
           const depth = (i % 3 + 1) * 0.8;
           el.style.transform = `translate(${x * depth}px, ${y * depth * 0.5}px)`;
         });
-
-        // Sun follows cursor gently
-        const circles = svg.querySelectorAll('circle');
         circles.forEach((el, i) => {
           const depth = (i % 2 + 1) * 1.2;
           el.style.transform = `translate(${x * depth}px, ${y * depth * 0.5}px)`;
@@ -1056,14 +1057,14 @@
       });
 
       heroArea.addEventListener('mouseleave', () => {
-        svg.querySelectorAll('ellipse, line, circle').forEach(el => {
+        parallaxEls.forEach(el => {
           el.style.transform = 'translate(0, 0)';
           el.style.transition = 'transform 0.5s ease';
         });
       });
 
       heroArea.addEventListener('mouseenter', () => {
-        svg.querySelectorAll('ellipse, line, circle').forEach(el => {
+        parallaxEls.forEach(el => {
           el.style.transition = 'transform 0.1s ease';
         });
       });
