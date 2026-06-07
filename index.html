@@ -3,13 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lanting Yang</title>
-  <meta name="description" content="Pharmacoepidemiologist building real-world evidence for safer medication use in complex environmental and social contexts.">
+  <title>Lanting Yang, PhD, MPH &mdash; Pharmacoepidemiology &amp; Environmental Health</title>
+  <meta name="description" content="Lanting Yang, PhD, MPH — pharmacoepidemiologist building real-world evidence for safer medication use in complex environmental and social contexts.">
+  <meta name="author" content="Lanting Yang">
+  <link rel="canonical" href="https://lantingy.github.io/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lanting Yang, PhD, MPH — Pharmacoepidemiology & Environmental Health">
+  <meta property="og:description" content="Building real-world evidence for safer medication use in complex environmental and social contexts.">
+  <meta property="og:url" content="https://lantingy.github.io/">
+  <meta property="og:image" content="https://lantingy.github.io/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lanting Yang, PhD, MPH — Pharmacoepidemiology & Environmental Health">
+  <meta name="twitter:description" content="Building real-world evidence for safer medication use in complex environmental and social contexts.">
+  <meta name="twitter:image" content="https://lantingy.github.io/images/og-image.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lanting Yang",
+    "givenName": "Lanting",
+    "familyName": "Yang",
+    "honorificSuffix": "PhD, MPH",
+    "url": "https://lantingy.github.io/",
+    "image": "https://lantingy.github.io/images/og-image.png",
+    "email": "layang@health.ucsd.edu",
+    "jobTitle": "Postdoctoral Scholar",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California San Diego"
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Pittsburgh" },
+      { "@type": "CollegeOrUniversity", "name": "Harbin Medical University" }
+    ],
+    "knowsAbout": ["Pharmacoepidemiology", "Environmental Health", "Real-World Evidence", "Causal Inference", "Pharmacy", "Data Science"],
+    "sameAs": [
+      "https://orcid.org/0000-0003-0597-9062",
+      "https://scholar.google.com/citations?user=HPTHeRQAAAAJ&hl=en&oi=ao",
+      "https://www.linkedin.com/in/lanting-yang/"
+    ]
+  }
+  </script>
 </head>
 <body class="loading">
 
@@ -178,13 +223,13 @@
           <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
         </svg>
       </button>
-      <button class="sound-toggle playing" id="soundToggle" aria-label="Toggle ambient sound">
-        <svg id="soundIconOn" class="sound-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button class="sound-toggle" id="soundToggle" aria-label="Play ambient nature sound">
+        <svg id="soundIconOn" class="sound-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
           <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
           <path d="M15.54 8.46a5 5 0 010 7.07" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           <path d="M18.07 5.93a9 9 0 010 12.73" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <svg id="soundIconOff" class="sound-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <svg id="soundIconOff" class="sound-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
           <line x1="16" y1="9" x2="22" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="22" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -247,13 +292,25 @@
             <p>I study how environmental stressors, including <strong>extreme heat</strong>, <strong>wildfire smoke</strong>, and <strong>air pollution</strong>, affect clinical outcomes among patients with chronic cardiometabolic conditions. A major focus of my work is understanding whether medications or <strong>medication burden</strong> may modify patients' vulnerability to environmental-related risks.</p>
             <span class="pub-toggle" onclick="document.getElementById('pubs-env').classList.toggle('show')">Related Publications <span class="pub-arrow">&#9662;</span></span>
             <div class="pub-panel" id="pubs-env">
-              <div class="pub-item">
-                <span class="pub-abbr">Paper Title Placeholder</span>
-                <a href="#" class="pub-doi">DOI &rarr;</a>
+              <div class="pub-item" onclick="this.classList.toggle('open')">
+                <div class="pub-item-head">
+                  <span class="pub-abbr">Case-Crossover Analysis of Short-Term Particulate Matter and Health Outcomes in Patients with Atrial Fibrillation <span class="pub-jrnl">&mdash; JAHA, 2026</span></span>
+                  <span class="pub-doi">In press</span>
+                  <span class="pub-caret">&#9662;</span>
+                </div>
+                <div class="pub-abstract">
+                  <p><em>Abstract to follow upon publication.</em> This study uses a case-crossover design to examine the association between short-term exposure to ambient <span class="kw">particulate matter</span> and acute health outcomes among patients with <span class="kw">atrial fibrillation</span>, evaluating <span class="kw">air pollution</span> as a modifiable environmental risk factor for hospitalization in this population.</p>
+                </div>
               </div>
-              <div class="pub-item">
-                <span class="pub-abbr">Paper Title Placeholder</span>
-                <a href="#" class="pub-doi">DOI &rarr;</a>
+              <div class="pub-item" onclick="this.classList.toggle('open')">
+                <div class="pub-item-head">
+                  <span class="pub-abbr">Risk of Hospitalization in Patients with Heart Failure Exposed to Extreme Heat and Poor Air Quality in the Western United States <span class="pub-jrnl">&mdash; Circulation, 2025 (AHA Scientific Sessions)</span></span>
+                  <a href="https://doi.org/10.1161/circ.152.suppl_3.4364346" target="_blank" rel="noopener" class="pub-doi" onclick="event.stopPropagation()">DOI &rarr;</a>
+                  <span class="pub-caret">&#9662;</span>
+                </div>
+                <div class="pub-abstract">
+                  <p><em>Conference abstract (American Heart Association Scientific Sessions 2025).</em> This study examined the risk of hospitalization among patients with <span class="kw">heart failure</span> exposed to <span class="kw">extreme heat</span> and <span class="kw">poor air quality</span> across the western United States, characterizing how environmental stressors relate to acute cardiovascular outcomes in a vulnerable population.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -265,13 +322,43 @@
             <p>I use large-scale <strong>real-world data</strong> to evaluate the safety and effectiveness of medications used in <strong>diabetes</strong>, <strong>cardiovascular disease</strong>, <strong>kidney disease</strong>, and aging populations. My work includes <strong>comparative effectiveness studies</strong>, treatment trajectory analyses, and <strong>medication safety</strong> evaluations using claims-based and linked datasets. This line of work includes studies on <strong>SGLT2 inhibitors</strong>, <strong>DPP-4 inhibitors</strong>, <strong>GLP-1 receptor agonists</strong>, <strong>oral anticoagulants</strong>, exposure to nephrotoxic medications, treatment adherence, and cardiovascular and renal outcomes.</p>
             <span class="pub-toggle" onclick="document.getElementById('pubs-rwe').classList.toggle('show')">Related Publications <span class="pub-arrow">&#9662;</span></span>
             <div class="pub-panel" id="pubs-rwe">
-              <div class="pub-item">
-                <span class="pub-abbr">Paper Title Placeholder</span>
-                <a href="#" class="pub-doi">DOI &rarr;</a>
+              <div class="pub-item" onclick="this.classList.toggle('open')">
+                <div class="pub-item-head">
+                  <span class="pub-abbr">Use of Potentially Nephrotoxic Drugs in Type 2 Diabetes Patients on SGLT2i: A Trajectories Analysis <span class="pub-jrnl">&mdash; Pharmacoepidemiol Drug Saf, 2025</span></span>
+                  <a href="https://doi.org/10.1002/pds.70098" target="_blank" rel="noopener" class="pub-doi" onclick="event.stopPropagation()">DOI &rarr;</a>
+                  <span class="pub-caret">&#9662;</span>
+                </div>
+                <div class="pub-abstract">
+                  <p><strong>Purpose:</strong> To characterize trajectories of <span class="kw">nephrotoxic potential (NxP)</span> drug use among older adults with <span class="kw">type 2 diabetes (T2D)</span> treated with <span class="kw">SGLT2 inhibitors</span> and identify associated patient characteristics.</p>
+                  <p><strong>Methods:</strong> Using 2012&ndash;2019 Medicare data, we selected patients with T2D who filled at least one SGLT2i prescription and quantified the number of NxP drugs used each month over the first 12 months. A <span class="kw">group-based trajectory model</span> identified groups with similar use patterns, and multinomial logistic regression examined associations between patient characteristics and group membership.</p>
+                  <p><strong>Results:</strong> Among 8,811 beneficiaries (mean age 67.5), we identified three trajectories: no (24%), low (54%), and high (22%) use of NxP drugs. Age, gender, low-income subsidy eligibility, and clinical characteristics were associated with group membership.</p>
+                  <p><strong>Conclusions:</strong> Three distinct trajectory groups emerged, with a substantial proportion showing low NxP drug use. Both social and clinical factors were associated with NxP drug use.</p>
+                </div>
               </div>
-              <div class="pub-item">
-                <span class="pub-abbr">Paper Title Placeholder</span>
-                <a href="#" class="pub-doi">DOI &rarr;</a>
+              <div class="pub-item" onclick="this.classList.toggle('open')">
+                <div class="pub-item-head">
+                  <span class="pub-abbr">COVID-19 Diagnosis, Oral Anticoagulation, and Stroke Risk in Patients with Atrial Fibrillation <span class="pub-jrnl">&mdash; Am J Cardiovasc Drugs, 2024</span></span>
+                  <a href="https://doi.org/10.1007/s40256-024-00671-3" target="_blank" rel="noopener" class="pub-doi" onclick="event.stopPropagation()">DOI &rarr;</a>
+                  <span class="pub-caret">&#9662;</span>
+                </div>
+                <div class="pub-abstract">
+                  <p><strong>Background:</strong> <span class="kw">COVID-19</span> has been associated with increased stroke risk. It remained unclear whether this risk differed by <span class="kw">oral anticoagulation (OAC)</span> use among patients with <span class="kw">atrial fibrillation</span>.</p>
+                  <p><strong>Methods:</strong> Using insurance claims data from individuals with established atrial fibrillation, we used Cox proportional hazard models to assess relationships between anticoagulant use, COVID-19 diagnosis setting, and <span class="kw">ischemic stroke</span>.</p>
+                  <p><strong>Results:</strong> Among 561,758 participants (mean age 77), anticoagulation reduced stroke risk (HR 0.85), while COVID-19 elevated it substantially (HR 2.11), with the greatest elevation among hospitalized cases (HR 3.95). There was no significant interaction between OAC use and COVID-19 diagnosis (p = 0.96).</p>
+                  <p><strong>Conclusion:</strong> The increase in COVID-19&ndash;associated stroke risk was independent of whether patients received oral anticoagulation therapy.</p>
+                </div>
+              </div>
+              <div class="pub-item" onclick="this.classList.toggle('open')">
+                <div class="pub-item-head">
+                  <span class="pub-abbr">Real-World Comparison of the Effectiveness and Safety of Apixaban, Dabigatran, Rivaroxaban, and Warfarin in Medicare Beneficiaries with Atrial Fibrillation <span class="pub-jrnl">&mdash; Am J Cardiol, 2020</span></span>
+                  <a href="https://doi.org/10.1016/j.amjcard.2020.03.034" target="_blank" rel="noopener" class="pub-doi" onclick="event.stopPropagation()">DOI &rarr;</a>
+                  <span class="pub-caret">&#9662;</span>
+                </div>
+                <div class="pub-abstract">
+                  <p>It remained unknown whether the comparative effectiveness of <span class="kw">direct oral anticoagulants (DOACs)</span> and <span class="kw">warfarin</span> differs between <span class="kw">atrial fibrillation</span> patients with and without a history of <span class="kw">stroke or transient ischemic attack (TIA)</span>. Using 2012&ndash;2014 Medicare claims, we identified patients newly diagnosed with AF who initiated apixaban, dabigatran, rivaroxaban, or warfarin, and constructed Cox proportional hazard models with treatment-by-history interaction terms.</p>
+                  <p>DOACs were generally more effective than warfarin in stroke prevention, but with important subgroup differences. The superiority of dabigatran over warfarin was more pronounced in patients with a history of stroke or TIA (HR 0.64) than without (HR 0.94; p for interaction = 0.034). Among patients with prior stroke or TIA, risk was lower with dabigatran (HR 0.64) and rivaroxaban (HR 0.70) than with apixaban.</p>
+                  <p>In conclusion, the comparative effectiveness of DOACs differs substantially by history of stroke or TIA; in particular, apixaban appeared less effective in patients with a prior stroke or TIA.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -283,13 +370,44 @@
             <p>My research applies and develops methods including <strong>target trial emulation</strong>, <strong>case-crossover designs</strong>, <strong>time-varying survival models</strong>, <strong>causal inference</strong>, <strong>machine learning</strong>, <strong>trajectory modeling</strong>, and <strong>claims-based phenotyping</strong>. I am also interested in using <strong>interpretable machine learning</strong> and <strong>natural language processing</strong> to improve risk prediction and evidence generation.</p>
             <span class="pub-toggle" onclick="document.getElementById('pubs-methods').classList.toggle('show')">Related Publications <span class="pub-arrow">&#9662;</span></span>
             <div class="pub-panel" id="pubs-methods">
-              <div class="pub-item">
-                <span class="pub-abbr">Paper Title Placeholder</span>
-                <a href="#" class="pub-doi">DOI &rarr;</a>
+              <div class="pub-item" onclick="this.classList.toggle('open')">
+                <div class="pub-item-head">
+                  <span class="pub-abbr">Identifying Patients at Risk of Acute Kidney Injury Among Medicare Beneficiaries with Type 2 Diabetes Initiating SGLT2 Inhibitors: A Machine Learning Approach <span class="pub-jrnl">&mdash; Front Pharmacol, 2022</span></span>
+                  <a href="https://doi.org/10.3389/fphar.2022.834743" target="_blank" rel="noopener" class="pub-doi" onclick="event.stopPropagation()">DOI &rarr;</a>
+                  <span class="pub-caret">&#9662;</span>
+                </div>
+                <div class="pub-abstract">
+                  <p><strong>Introduction:</strong> To predict <span class="kw">acute kidney injury (AKI)</span> risk in patients with <span class="kw">type 2 diabetes (T2D)</span> prescribed <span class="kw">SGLT2 inhibitors</span>.</p>
+                  <p><strong>Methods:</strong> Using a 5% random sample of Medicare claims, we identified 17,694 patients who filled SGLT2i prescriptions in 2013&ndash;2016, split equally into training and testing sets, and measured 65 candidate predictors from the prior year. We applied <span class="kw">random forests (RF)</span>, <span class="kw">elastic net</span>, and <span class="kw">LASSO</span> for risk prediction.</p>
+                  <p><strong>Results:</strong> The AKI incidence rate was 1.1% over a median 1.5-year follow-up. RF produced the best prediction (C-statistic = 0.72). Among the top 10% by risk score, the actual AKI rate was 3.7%. Use of loop diuretics had the strongest association with AKI (adjusted OR 3.72).</p>
+                  <p><strong>Discussion:</strong> The machine learning model efficiently identified Medicare beneficiaries with T2D at risk of AKI during SGLT2i treatment.</p>
+                </div>
               </div>
-              <div class="pub-item">
-                <span class="pub-abbr">Paper Title Placeholder</span>
-                <a href="#" class="pub-doi">DOI &rarr;</a>
+              <div class="pub-item" onclick="this.classList.toggle('open')">
+                <div class="pub-item-head">
+                  <span class="pub-abbr">Using Machine Learning to Identify Diabetes Patients with Canagliflozin Prescriptions at High Risk of Lower Extremity Amputation Using Real-World Data <span class="pub-jrnl">&mdash; Pharmacoepidemiol Drug Saf, 2021</span></span>
+                  <a href="https://doi.org/10.1002/pds.5206" target="_blank" rel="noopener" class="pub-doi" onclick="event.stopPropagation()">DOI &rarr;</a>
+                  <span class="pub-caret">&#9662;</span>
+                </div>
+                <div class="pub-abstract">
+                  <p><strong>Aims:</strong> Canagliflozin has been increasingly used in diabetes for its cardiovascular and renal benefits, but trials documented an increased risk of <span class="kw">lower extremity amputation (LEA)</span>. We applied <span class="kw">machine learning</span> to predict LEA among diabetes patients treated with <span class="kw">canagliflozin</span>.</p>
+                  <p><strong>Methods:</strong> Using a 5% random sample of Medicare beneficiaries, we identified 13,904 patients initiating canagliflozin (April 2013&ndash;December 2016), split equally into training and testing sets, identified 41 candidate predictors, and applied elastic net, LASSO, gradient boosting, and random forests.</p>
+                  <p><strong>Results:</strong> The LEA incidence rate was 0.57% over a median 1.5-year follow-up. LASSO produced the best prediction (C-statistic 0.81). Among the top 5% by risk score, the actual LEA rate was 3.74%. History of LEA (adjusted OR 33.6) and loop diuretic use (adjusted OR 3.6) had the strongest associations.</p>
+                  <p><strong>Conclusions:</strong> The machine learning model efficiently predicted LEA risk and may support optimized treatment decisions for diabetes patients.</p>
+                </div>
+              </div>
+              <div class="pub-item" onclick="this.classList.toggle('open')">
+                <div class="pub-item-head">
+                  <span class="pub-abbr">Individual and Social Determinants of Adherence to SGLT2 Inhibitor Therapy: A Trajectory Analysis <span class="pub-jrnl">&mdash; J Manag Care Spec Pharm, 2023</span></span>
+                  <a href="https://doi.org/10.18553/jmcp.2023.29.11.1242" target="_blank" rel="noopener" class="pub-doi" onclick="event.stopPropagation()">DOI &rarr;</a>
+                  <span class="pub-caret">&#9662;</span>
+                </div>
+                <div class="pub-abstract">
+                  <p><strong>Objective:</strong> To identify distinct <span class="kw">adherence trajectories</span> to SGLT2 inhibitors among patients with <span class="kw">type 2 diabetes (T2D)</span> and examine patient characteristics and <span class="kw">social determinants of health (SDOH)</span> linked to adherence.</p>
+                  <p><strong>Methods:</strong> This retrospective cohort study used 2012&ndash;2016 Medicare claims to identify T2D patients initiating SGLT2i. <span class="kw">Group-based trajectory models</span> categorized adherence patterns, and <span class="kw">multinomial logistic regression</span> examined associations with patient characteristics.</p>
+                  <p><strong>Results:</strong> Among 6,719 patients, four trajectories emerged: continuously adherent (49.6%), early discontinuers (27.5%), late discontinuers (14.5%), and intermediately adherent (8.4%). Neighborhoods with higher unemployment, lower income, lower educational attainment, and worse health infrastructure showed reduced adherence.</p>
+                  <p><strong>Conclusions:</strong> Only half of patients remained continuously adherent during the first year, and several contextual SDOHs were associated with suboptimal adherence.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -302,6 +420,30 @@
     <h2><span class="heading-counter">C.</span> Posts</h2>
     <p class="posts-intro">Professional updates, milestones, and reflections from my academic journey.</p>
     <div class="posts-grid">
+
+      <div class="post-card-v2" onclick="this.classList.toggle('expanded')">
+        <div class="post-card-preview">
+          <div class="post-card-logo">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-label="JAHA logo">
+              <circle cx="40" cy="40" r="38" fill="#bb133e" opacity="0.92"/>
+              <text x="40" y="37" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="800" fill="#ffffff">JAHA</text>
+              <text x="40" y="51" text-anchor="middle" font-family="Inter, sans-serif" font-size="5.2" font-weight="500" fill="rgba(255,255,255,0.85)">J Am Heart</text>
+              <text x="40" y="59" text-anchor="middle" font-family="Inter, sans-serif" font-size="5.2" font-weight="500" fill="rgba(255,255,255,0.85)">Assoc</text>
+            </svg>
+          </div>
+          <div class="post-card-info">
+            <h3>New Paper In Press at JAHA: Air Pollution and Atrial Fibrillation</h3>
+            <div class="post-card-date">2026 &middot; In Press</div>
+          </div>
+          <span class="post-card-arrow">&#9662;</span>
+        </div>
+        <div class="post-card-detail">
+          <p>A paper I have been working on for a while just got accepted at the <strong>Journal of the American Heart Association</strong>, so it is officially in press now.</p>
+          <p>The short version: we looked at whether spikes in <strong>air pollution</strong> &mdash; specifically fine <strong>particulate matter</strong> &mdash; line up with bad days for people living with <strong>atrial fibrillation</strong>. We used a case-crossover design, which basically compares each person to themselves on days they were exposed versus days they were not, so everyone acts as their own control.</p>
+          <p>It is the kind of question that sits right at the intersection I keep coming back to: the air we breathe, the medications we take, and the hearts that have to deal with both.</p>
+          <p>The full results (and a DOI) will land here once it is published. More to come.</p>
+        </div>
+      </div>
 
       <div class="post-card-v2" onclick="this.classList.toggle('expanded')">
         <div class="post-card-preview">
@@ -400,6 +542,8 @@
     <div class="contact-block">
       <p><a href="mailto:layang@health.ucsd.edu">layang@health.ucsd.edu</a></p>
       <div class="contact-links">
+        <a href="Lanting-Yang-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+        <a href="https://orcid.org/0000-0003-0597-9062" target="_blank" rel="noopener">ORCID</a>
         <a href="https://scholar.google.com/citations?user=HPTHeRQAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
         <a href="https://www.linkedin.com/in/lanting-yang/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -415,56 +559,56 @@
 
     <div class="coffee-feature">
       <h3 class="coffee-label">Meet Joey</h3>
-      <div class="joey-gallery">
-        <div class="joey-photo placeholder-photo">
-          <span>Joey napping</span>
+      <div class="joey-carousel">
+        <button class="joey-arrow joey-arrow-prev" id="joeyPrev" aria-label="Previous photo">&#8249;</button>
+        <div class="joey-frame" id="joeyFrame">
+          <img id="joeyCurrent" src="" alt="">
         </div>
-        <div class="joey-photo placeholder-photo">
-          <span>Joey supervising research</span>
-        </div>
-        <div class="joey-photo placeholder-photo">
-          <span>Joey being Joey</span>
-        </div>
+        <button class="joey-arrow joey-arrow-next" id="joeyNext" aria-label="Next photo">&#8250;</button>
       </div>
+      <p class="joey-live-caption" id="joeyLiveCaption"></p>
+      <div class="joey-dots" id="joeyDots"></div>
       <p class="joey-caption">My unofficial research assistant. Specializes in napping on manuscripts and walking across keyboards at critical moments.</p>
     </div>
 
     <h3 class="coffee-label">Recent Notes</h3>
+    <p class="notes-empty">Notes coming soon.</p>
     <div class="blog-grid">
+
+      <!-- ===========================================================
+           HOW TO ADD A NOTE:
+           1. Copy the <article> template below and paste it inside
+              this <div class="blog-grid"> (above this comment is fine).
+           2. Edit the date, title, and preview text.
+           3. (Optional photo) drop an image in images/ and replace
+              the <div class="blog-card-img ...">...</div> line with:
+                <div class="blog-card-img">
+                  <img src="images/my-note.jpg" alt="">
+                </div>
+           4. (Optional link) wrap the <article> contents in an <a> or
+              add onclick to open a full note / external page.
+           5. Delete the "Notes coming soon." line above once you add one.
+
       <article class="blog-card">
         <div class="blog-card-img placeholder-photo"><span>Photo</span></div>
         <div class="blog-card-body">
-          <div class="blog-date">Coming soon</div>
-          <h4>Morning Rituals &amp; Writing Routines</h4>
-          <p>On the small habits that make a big difference in academic life...</p>
+          <div class="blog-date">June 2026</div>
+          <h4>Your note title here</h4>
+          <p>A one or two line preview of what the note is about...</p>
         </div>
       </article>
-      <article class="blog-card">
-        <div class="blog-card-img placeholder-photo"><span>Photo</span></div>
-        <div class="blog-card-body">
-          <div class="blog-date">Coming soon</div>
-          <h4>Life with Joey: Lessons from a Cat</h4>
-          <p>What my cat has taught me about patience, rest, and knowing when to pounce...</p>
-        </div>
-      </article>
-      <article class="blog-card">
-        <div class="blog-card-img placeholder-photo"><span>Photo</span></div>
-        <div class="blog-card-body">
-          <div class="blog-date">Coming soon</div>
-          <h4>Favorite Coffee Spots</h4>
-          <p>A running list of the best places to think, write, and caffeinate...</p>
-        </div>
-      </article>
-      <article class="blog-card">
-        <div class="blog-card-img placeholder-photo"><span>Photo</span></div>
-        <div class="blog-card-body">
-          <div class="blog-date">Coming soon</div>
-          <h4>Moving to Gainesville</h4>
-          <p>Reflections on starting a new chapter at the University of Florida...</p>
-        </div>
-      </article>
+      =========================================================== -->
+
     </div>
   </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
 
   <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
@@ -828,23 +972,8 @@
       soundIconOff.style.display = '';
     }
 
-    // Auto-play on first non-button user interaction
-    let autoStarted = false;
-    function autoStartSound(e) {
-      if (autoStarted) return;
-      if (soundToggle.contains(e.target)) return;
-      autoStarted = true;
-      startSound();
-      document.removeEventListener('click', autoStartSound);
-      document.removeEventListener('scroll', autoStartSound);
-    }
-    document.addEventListener('click', autoStartSound);
-    document.addEventListener('scroll', autoStartSound);
-
+    // Ambient sound is opt-in: it only plays when the user clicks the speaker.
     soundToggle.addEventListener('click', () => {
-      autoStarted = true;
-      document.removeEventListener('click', autoStartSound);
-      document.removeEventListener('scroll', autoStartSound);
       if (soundPlaying) {
         stopSound();
       } else {
@@ -852,10 +981,23 @@
       }
     });
 
-    // Hero SVG parallax on mouse move
+    // Keyboard accessibility for click-to-toggle elements
+    document.querySelectorAll('.pub-item, .pub-toggle, .post-card-v2, .training-link, .joey-frame').forEach(el => {
+      if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+      if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          el.click();
+        }
+      });
+    });
+
+    // Hero SVG parallax on mouse move (skipped when reduced motion is preferred)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const heroArea = document.querySelector('.header-hero');
     const svg = document.querySelector('.hero-visual');
-    if (heroArea && svg) {
+    if (heroArea && svg && !prefersReducedMotion) {
       heroArea.addEventListener('mousemove', (e) => {
         const rect = heroArea.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -887,6 +1029,81 @@
         svg.querySelectorAll('ellipse, line, circle').forEach(el => {
           el.style.transition = 'transform 0.1s ease';
         });
+      });
+    }
+
+    // Joey photo gallery + lightbox
+    // To add a photo: drop the file in images/ and add a line below.
+    const joeyPhotos = [
+      { src: 'images/joey-1.jpg', caption: 'Joey napping' },
+      { src: 'images/joey-2.jpg', caption: 'Joey supervising research' },
+      { src: 'images/joey-3.jpg', caption: 'Joey attending a meeting' },
+      { src: 'images/joey-4.jpg', caption: 'Joey, off duty' },
+      { src: 'images/joey-5.jpg', caption: 'Joey holding court' },
+      { src: 'images/joey-6.jpg', caption: 'Joey with his toy collection' },
+    ];
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    let currentPhoto = 0;
+
+    // Carousel
+    const joeyCurrent = document.getElementById('joeyCurrent');
+    const joeyLiveCaption = document.getElementById('joeyLiveCaption');
+    const joeyDots = document.getElementById('joeyDots');
+    let galleryIndex = 0;
+
+    function renderGallery(i) {
+      galleryIndex = (i + joeyPhotos.length) % joeyPhotos.length;
+      const p = joeyPhotos[galleryIndex];
+      joeyCurrent.src = p.src;
+      joeyCurrent.alt = p.caption;
+      joeyLiveCaption.textContent = p.caption;
+      Array.from(joeyDots.children).forEach((d, idx) =>
+        d.classList.toggle('active', idx === galleryIndex));
+    }
+
+    if (joeyCurrent) {
+      joeyPhotos.forEach((p, idx) => {
+        const dot = document.createElement('button');
+        dot.className = 'joey-dot';
+        dot.setAttribute('aria-label', 'Go to photo ' + (idx + 1));
+        dot.addEventListener('click', () => renderGallery(idx));
+        joeyDots.appendChild(dot);
+      });
+      document.getElementById('joeyPrev').addEventListener('click', () => renderGallery(galleryIndex - 1));
+      document.getElementById('joeyNext').addEventListener('click', () => renderGallery(galleryIndex + 1));
+      joeyCurrent.addEventListener('click', () => openLightbox(galleryIndex));
+      renderGallery(0);
+    }
+
+    function showPhoto(i) {
+      currentPhoto = (i + joeyPhotos.length) % joeyPhotos.length;
+      lightboxImg.src = joeyPhotos[currentPhoto].src;
+      lightboxImg.alt = joeyPhotos[currentPhoto].caption;
+      lightboxCaption.textContent = joeyPhotos[currentPhoto].caption;
+    }
+    function openLightbox(i) {
+      showPhoto(i);
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+      document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+      document.getElementById('lightboxPrev').addEventListener('click', (e) => { e.stopPropagation(); showPhoto(currentPhoto - 1); });
+      document.getElementById('lightboxNext').addEventListener('click', (e) => { e.stopPropagation(); showPhoto(currentPhoto + 1); });
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPhoto(currentPhoto - 1);
+        if (e.key === 'ArrowRight') showPhoto(currentPhoto + 1);
       });
     }
   </script>
