@@ -613,6 +613,23 @@ p {
   border-bottom-color: var(--accent);
 }
 
+/* View-all-publications link under Research */
+.pub-all-link {
+  margin-top: 2.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pub-all-link a {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.pub-all-link a:hover {
+  border-bottom-color: var(--accent);
+}
+
 /* Posts section - interactive cards */
 .posts-intro {
   font-size: 0.95rem;

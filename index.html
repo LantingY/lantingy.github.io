@@ -23,7 +23,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="stylesheet" href="style.css">
 
@@ -419,6 +419,7 @@
           </div>
         </div>
       </div>
+      <p class="pub-all-link"><a href="https://scholar.google.com/citations?user=HPTHeRQAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">View all publications on Google Scholar &rarr;</a></p>
     </div>
   </section>
 
@@ -480,7 +481,7 @@
       <div class="joey-carousel">
         <button class="joey-arrow joey-arrow-prev" id="joeyPrev" aria-label="Previous photo">&#8249;</button>
         <div class="joey-frame" id="joeyFrame">
-          <img id="joeyCurrent" src="" alt="">
+          <img id="joeyCurrent" src="" alt="" decoding="async">
         </div>
         <button class="joey-arrow joey-arrow-next" id="joeyNext" aria-label="Next photo">&#8250;</button>
       </div>
@@ -523,7 +524,7 @@
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
     <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
-    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" decoding="async">
     <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
@@ -609,10 +610,15 @@
       }
     });
 
-    // Page loading animation
-    window.addEventListener('load', () => {
-      document.body.classList.remove('loading');
-    });
+    // Reveal the page as soon as the DOM is ready (don't wait on all images);
+    // safety fallback in case something delays DOMContentLoaded.
+    function revealPage() { document.body.classList.remove('loading'); }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', revealPage);
+    } else {
+      revealPage();
+    }
+    setTimeout(revealPage, 1500);
 
     // Scroll-to-top button
     const scrollTopBtn = document.getElementById('scrollTop');
@@ -973,7 +979,7 @@
     function openPost(i) {
       const p = posts[i];
       const cover = p.image
-        ? `<img class="post-modal-cover" src="${p.image}" alt="${p.title}">`
+        ? `<img class="post-modal-cover" src="${p.image}" alt="${p.title}" decoding="async">`
         : `<div class="post-modal-cover-branded" style="background:${gradient(p)}"><span class="pt-blob pt-blob-1"></span><span class="pt-blob pt-blob-2"></span><span class="pt-emblem">${p.emblem || ''}</span></div>`;
       postModalContent.innerHTML = cover +
         `<div class="post-modal-body">${p.tag ? `<span class="post-tag post-tag-modal">${p.tag}</span>` : ''}<div class="pm-date">${p.date}</div><h3>${p.title}</h3>${p.body}</div>`;
@@ -992,7 +998,7 @@
         tile.setAttribute('role', 'button');
         tile.setAttribute('tabindex', '0');
         if (p.image) {
-          tile.innerHTML = `<img src="${p.image}" alt="${p.title}" loading="lazy">
+          tile.innerHTML = `<img src="${p.image}" alt="${p.title}" loading="lazy" decoding="async">
             ${p.tag ? `<span class="post-tag post-tag-float">${p.tag}</span>` : ''}
             <div class="post-tile-overlay"><span class="pt-date">${p.date}</span><span class="pt-title">${p.title}</span></div>`;
         } else {
