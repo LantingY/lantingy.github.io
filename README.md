@@ -60,3 +60,9 @@ git commit -m "Update site"
 git push
 ```
 Changes go live at <https://lantingy.github.io/> within a minute or two.
+
+## Image credits
+
+- `images/post-uf.jpg` — "Century Tower (University of Florida)" by Kate Haskell, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Century_Tower_(University_of_Florida).jpg).
+- `images/post-ada.jpg` — American Diabetes Association logo, public domain (PD-textlogo) via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ADA_rgb_Connected_for_Life-01-v2_0.svg). "American Diabetes Association" and the ADA logo are trademarks of the ADA; used here to reference an ADA fellowship.
+- `images/joey-*.jpg`, `images/og-image.png` — original to this site.
