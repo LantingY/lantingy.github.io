@@ -1463,6 +1463,19 @@ body.dark-mode .notes-empty {
   display: block;
 }
 
+/* Gradient banner for notes without a photo */
+.note-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6a8a78, #3d5c48);
+  font-size: 2.2rem;
+}
+
+.note-cover {
+  background: linear-gradient(135deg, #6a8a78, #3d5c48);
+}
+
 .blog-card-body {
   padding: 1.2rem 1.3rem;
 }

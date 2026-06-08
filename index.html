@@ -491,34 +491,10 @@
     </div>
 
     <h3 class="coffee-label">Recent Notes</h3>
-    <p class="notes-empty">Notes coming soon.</p>
-    <div class="blog-grid">
-
-      <!-- ===========================================================
-           HOW TO ADD A NOTE:
-           1. Copy the <article> template below and paste it inside
-              this <div class="blog-grid"> (above this comment is fine).
-           2. Edit the date, title, and preview text.
-           3. (Optional photo) drop an image in images/ and replace
-              the <div class="blog-card-img ...">...</div> line with:
-                <div class="blog-card-img">
-                  <img src="images/my-note.jpg" alt="">
-                </div>
-           4. (Optional link) wrap the <article> contents in an <a> or
-              add onclick to open a full note / external page.
-           5. Delete the "Notes coming soon." line above once you add one.
-
-      <article class="blog-card">
-        <div class="blog-card-img placeholder-photo"><span>Photo</span></div>
-        <div class="blog-card-body">
-          <div class="blog-date">June 2026</div>
-          <h4>Your note title here</h4>
-          <p>A one or two line preview of what the note is about...</p>
-        </div>
-      </article>
-      =========================================================== -->
-
-    </div>
+    <!-- Notes are data-driven: edit the `notes` array near the bottom of this file.
+         Each note opens in a popup. `image` is optional (a gradient banner is used
+         if omitted); `excerpt` is the card preview; `body` is the full HTML. -->
+    <div class="blog-grid" id="notesGrid"></div>
   </section>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -1021,6 +997,58 @@
       document.getElementById('postModalClose').addEventListener('click', closePost);
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && postModal.classList.contains('open')) closePost();
+      });
+    }
+
+    // Recent Notes (cards that open in the post modal)
+    // To add a note: add an object below. `image` optional (a gradient banner is
+    // shown if omitted); `excerpt` is the card preview; `body` is the full HTML.
+    const notes = [
+      {
+        title: "Building This Website with an AI",
+        date: "June 2026",
+        excerpt: "A few honest thoughts on making this site in conversation with an AI, and where humans, machines, and the environment quietly overlap.",
+        body: `
+          <p>This whole site was built in conversation. I never opened a code editor and started from a template. Instead, I described what I wanted, piece by piece, to an AI assistant, and we shaped it together: the little hillside with the wandering sheep, the gallery of Joey photos, the way each publication opens to reveal its abstract, even the popovers that explain what &ldquo;pharmacoepidemiology&rdquo; means.</p>
+          <p>What surprised me most was how much of it felt like editing rather than engineering. I would say &ldquo;make the posts more vivid,&rdquo; or &ldquo;the sheep should be at the bottom, not the top,&rdquo; and we would go back and forth until it felt right. The AI wrote the code; I made the decisions. That division of labor, the machine for the mechanics and the human for the judgment and taste, is exactly the kind of collaboration I think about in my research, just in a different setting.</p>
+          <p>Because my work sits at the intersection of medicine, data, and the environment, I keep noticing the overlaps. AI runs on electricity, and electricity has a footprint, the same kind of environmental cost I study when I look at heat, air pollution, and health. The tools we build to understand the world also act on it. That is not a reason to avoid them. It is a reason to use them deliberately, the way I would want any powerful intervention used, with attention to who benefits, who bears the cost, and what we leave behind.</p>
+          <p>Mostly, building this was a small reminder that human choices sit at the center of everything: our health, our climate, and now our machines. The technology is only as thoughtful as the person steering it, and I would like to keep steering carefully.</p>`
+      },
+    ];
+
+    const notesGrid = document.getElementById('notesGrid');
+
+    function openNote(i) {
+      const n = notes[i];
+      const cover = n.image
+        ? `<img class="post-modal-cover" src="${n.image}" alt="${n.title}" decoding="async">`
+        : `<div class="post-modal-cover-branded note-cover"><span class="pt-emblem">🌿</span></div>`;
+      postModalContent.innerHTML = cover +
+        `<div class="post-modal-body"><div class="pm-date">${n.date}</div><h3>${n.title}</h3>${n.body}</div>`;
+      postModal.classList.add('open');
+      postModal.setAttribute('aria-hidden', 'false');
+    }
+
+    if (notesGrid) {
+      notes.forEach((n, i) => {
+        const card = document.createElement('article');
+        card.className = 'blog-card';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        const banner = n.image
+          ? `<div class="blog-card-img"><img src="${n.image}" alt="" loading="lazy" decoding="async"></div>`
+          : `<div class="blog-card-img note-banner"><span>🌿</span></div>`;
+        card.innerHTML = `${banner}
+          <div class="blog-card-body">
+            <div class="blog-date">${n.date}</div>
+            <h4>${n.title}</h4>
+            <p>${n.excerpt}</p>
+          </div>`;
+        card.addEventListener('click', () => openNote(i));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openNote(i); }
+        });
+        notesGrid.appendChild(card);
       });
     }
 
