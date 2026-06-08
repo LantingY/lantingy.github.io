@@ -199,6 +199,81 @@ a:hover {
   text-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
+/* Clickable glossary terms in the tagline */
+.hero-tagline .term {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0.08em 0.4em;
+  margin: 0 -0.12em;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-shadow: inherit;
+}
+
+.hero-tagline .term:hover,
+.hero-tagline .term:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  outline: none;
+}
+
+/* Glossary popover */
+.term-popover {
+  position: fixed;
+  z-index: 1100;
+  max-width: 300px;
+  padding: 1rem 1.1rem 1.1rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.term-popover.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.term-popover-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 1.2rem 0.4rem 0;
+}
+
+.term-popover-text {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+}
+
+.term-popover-close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.term-popover-close:hover {
+  color: var(--text);
+}
+
 .header-nav-bar {
   display: flex;
   align-items: center;

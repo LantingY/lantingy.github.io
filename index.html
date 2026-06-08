@@ -205,7 +205,7 @@
       </svg>
       <div class="hero-overlay">
         <h1 class="hero-name">Hello, I'm Lanting.</h1>
-        <p class="hero-tagline">Pharmacoepidemiology &middot; Environmental Health &middot; Real-World Evidence</p>
+        <p class="hero-tagline"><button class="term" type="button" data-term="pharmacoepidemiology">Pharmacoepidemiology</button> &middot; <button class="term" type="button" data-term="environmental-health">Environmental Health</button> &middot; <button class="term" type="button" data-term="real-world-evidence">Real-World Evidence</button></p>
       </div>
       <button class="mode-toggle" id="modeToggle" aria-label="Toggle dark mode">
         <svg id="sunIcon" class="mode-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -527,6 +527,12 @@
     <img class="lightbox-img" id="lightboxImg" src="" alt="" decoding="async">
     <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
     <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <div class="term-popover" id="termPopover" role="dialog" aria-hidden="true">
+    <button class="term-popover-close" id="termPopoverClose" aria-label="Close">&times;</button>
+    <h4 class="term-popover-title" id="termPopoverTitle"></h4>
+    <p class="term-popover-text" id="termPopoverText"></p>
   </div>
 
   <div class="post-modal" id="postModal" aria-hidden="true">
@@ -1016,6 +1022,73 @@
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && postModal.classList.contains('open')) closePost();
       });
+    }
+
+    // Glossary popovers for the tagline keywords
+    const termDefs = {
+      'pharmacoepidemiology': {
+        title: 'Pharmacoepidemiology',
+        text: 'The study of how medications are used and what effects — both benefits and risks — they have across large, real-world populations.'
+      },
+      'environmental-health': {
+        title: 'Environmental Health',
+        text: 'How environmental conditions such as extreme heat, air pollution, and wildfire smoke affect human health and disease.'
+      },
+      'real-world-evidence': {
+        title: 'Real-World Evidence',
+        text: 'Evidence about how treatments work in everyday practice, drawn from real-world data such as insurance claims and electronic health records — not clinical trials alone.'
+      }
+    };
+
+    const termPopover = document.getElementById('termPopover');
+    const termPopoverTitle = document.getElementById('termPopoverTitle');
+    const termPopoverText = document.getElementById('termPopoverText');
+    let activeTerm = null;
+
+    function positionTermPopover(btn) {
+      const r = btn.getBoundingClientRect();
+      const pop = termPopover.getBoundingClientRect();
+      const margin = 8;
+      let left = r.left + r.width / 2 - pop.width / 2;
+      left = Math.max(margin, Math.min(left, window.innerWidth - pop.width - margin));
+      let top = r.top - pop.height - 10;
+      if (top < margin) top = r.bottom + 10;
+      termPopover.style.left = left + 'px';
+      termPopover.style.top = top + 'px';
+    }
+
+    function openTerm(btn) {
+      const d = termDefs[btn.dataset.term];
+      if (!d || !termPopover) return;
+      termPopoverTitle.textContent = d.title;
+      termPopoverText.textContent = d.text;
+      activeTerm = btn;
+      termPopover.classList.add('open');
+      termPopover.setAttribute('aria-hidden', 'false');
+      positionTermPopover(btn);
+    }
+
+    function closeTerm() {
+      if (!termPopover) return;
+      termPopover.classList.remove('open');
+      termPopover.setAttribute('aria-hidden', 'true');
+      activeTerm = null;
+    }
+
+    if (termPopover) {
+      document.querySelectorAll('.hero-tagline .term').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (activeTerm === btn) { closeTerm(); } else { openTerm(btn); }
+        });
+      });
+      document.getElementById('termPopoverClose').addEventListener('click', closeTerm);
+      document.addEventListener('click', (e) => {
+        if (activeTerm && !termPopover.contains(e.target) && !e.target.classList.contains('term')) closeTerm();
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeTerm(); });
+      window.addEventListener('scroll', () => { if (activeTerm) closeTerm(); });
+      window.addEventListener('resize', () => { if (activeTerm) positionTermPopover(activeTerm); });
     }
 
     // Keyboard accessibility for click-to-toggle elements
